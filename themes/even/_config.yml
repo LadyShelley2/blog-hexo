@@ -11,7 +11,7 @@ favicon: /favicon.ico
 # Set feed link (false | default | your feed link)
 # false: disable
 # default: use `atom.xml`, generator for `hexo-generator-feed`
-rss: false
+rss: default
 
 # ===========================================
 # Menu Settings
@@ -19,12 +19,12 @@ rss: false
 menu:
   Home: /
   Archives: /archives/
-  # Tags: /tags
+  Tags: /tags
   # Categories: /categories
-  # About: /about
+  About: /about
 
 # site search option
-search: false
+search: true
 
 # Fancybox
 fancybox: true
@@ -41,13 +41,13 @@ theme:
 # Social links Settings
 # ===========================================
 social:
-  email: your@email.com
+  email: libeibei1995@gmail.com
   stack-overflow:
   twitter:
   facebook:
-  github: 
+  github: https://github.com/LadyShelley2
   weibo: 
-  zhihu: 
+  zhihu: https://www.zhihu.com/people/shelley-lee-94
 
 # ===========================================
 # Third Party Services Settings
@@ -59,7 +59,7 @@ baidu_analytics:
 google_analytics: 
 
 # Duoshuo
-duoshuo_shortname: 
+duoshuo_shortname: leebeibei
 # Disqus
 disqus_shortname: 
 

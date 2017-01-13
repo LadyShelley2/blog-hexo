@@ -1,4 +1,5 @@
 {% if theme.social %}
+
   <div class="social-links">
     {% for name, path in theme.social %}
       {% if path %}
