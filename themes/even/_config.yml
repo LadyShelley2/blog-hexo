@@ -3,7 +3,7 @@
 # ===========================================
 
 # Site creation time
-since: 2015
+since: 2017
 
 # Custom your favicon.ico in `site/source`
 favicon: /favicon.ico
@@ -53,10 +53,12 @@ social:
 # Third Party Services Settings
 # ===========================================
 
-# Baidu Analytics
-baidu_analytics: 
+
 # Google Analytics
-google_analytics: 
+google_analytics: UA-90357969-1
+
+# Baidu Analytics
+baidu_analytics: f29aeed2f059e5c86ef8b128ce0aa248
 
 # Duoshuo
 duoshuo_shortname: leebeibei
