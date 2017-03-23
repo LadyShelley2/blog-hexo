@@ -2,11 +2,15 @@
 title: flex布局完全教程
 date: 2017-03-24 00:02:04
 tags:
+- Flexbox
+- CSS
+- CSS布局
+- 前端基础
 ---
-> 原文 [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+> 原文：[A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
  作者：[CHRIS COYIER](https://css-tricks.com/author/chriscoyier/)
  译者：Shelley Lee
- 。
+ 未经同意不得转载。
 
 ## 背景介绍
 
@@ -18,20 +22,20 @@ Flex布局的主要思想是使父元素能够调节子元素的高度、宽度�
 
 Note: Flex 布局比较适合小规模的布局，Gird布局面向更大规模的布局。
 
-<!--more--> 
-
 ## 基本概念
 
 Flex布局是一个完整的模块而不是一个单独的属性，它包括了完整的一套属性。其中有的属性是设置在容器（container，也可以叫做父元素，称为`flex container`）上，有的则是设置在容器的子元素上（flex items）上。
 
-![](./images/flex-container.svg)
-![](./images/flex-items.svg)
+<!--more--> 
+
+![](http://ojr0cmiri.bkt.clouddn.com/a-complete-guide-to-flexbox/flex-container.svg)
+![](http://ojr0cmiri.bkt.clouddn.com/a-complete-guide-to-flexbox/flex-items.svg)
 
 > 译者注：由于item译成项目不够直观和形象，以下统一用父元素指代container，子元素指代item。
 
 如果我们可以说传统布局是建立在块状元素垂直流和行内元素水平流上的，那么flex布局就是建立在"flex-flow方向"上的，通过下图解释flex布局的主要思想。
 
-![](./images/flexbox.png)
+![](http://ojr0cmiri.bkt.clouddn.com/a-complete-guide-to-flexbox/flexbox.png)
 
 在flex布局中，子元素要么按照主轴也就是`main axis`（从`main-start`到`main-end`）排布，要么按照交叉轴，也就是`cross axis`(从`cross-start`到`cross-end`)排布。
 
@@ -62,7 +66,7 @@ Flex布局是一个完整的模块而不是一个单独的属性，它包括了�
 
 ##### flex-direction
 
-![](./images/flex-direction2.svg)
+![](http://ojr0cmiri.bkt.clouddn.com/a-complete-guide-to-flexbox/flex-direction2.svg)
 
 `flex-direction`定义flex布局的主轴方向。flex布局是单方向布局，子元素主要沿着水平行或者垂直列布局。
 
@@ -79,7 +83,7 @@ Flex布局是一个完整的模块而不是一个单独的属性，它包括了�
 
 ##### flex-wrap
 
-![](./images/flex-wrap.svg)
+![](http://ojr0cmiri.bkt.clouddn.com/a-complete-guide-to-flexbox/flex-wrap.svg)
 
 默认情况下，flex布局中父元素会把子元素尽可能地排在同一行，通过设置`flex-wrap`来决定是否允许子元素这行排列。
 
@@ -104,7 +108,7 @@ flex-flow: <‘flex-direction’> || <‘flex-wrap’>
 
 ##### justify-content
 
-![](./images/justify-content.svg)
+![](http://ojr0cmiri.bkt.clouddn.com/a-complete-guide-to-flexbox/justify-content.svg)
 
 `justify-content`属性定义了子元素沿主轴方向的对齐方式，用来当子元素大小最大的时候，分配主轴上的剩余空间。也可以当子元素超出主轴的时候用来控制子元素的对齐方式。
 
@@ -122,7 +126,7 @@ flex-flow: <‘flex-direction’> || <‘flex-wrap’>
 
 ##### align-items
 
-![](./images/align-items.svg)
+![](http://ojr0cmiri.bkt.clouddn.com/a-complete-guide-to-flexbox/align-items.svg)
 
 `align-items`定义了子元素在交叉轴方向的对齐方向，这是在每个子元素仍然在其原来所在行的基础上所说的。可以看作是交叉轴上的`justify-content`属性;
 
@@ -139,7 +143,7 @@ flex-flow: <‘flex-direction’> || <‘flex-wrap’>
 
 ##### align-content
 
-![](./images/align-content.svg)
+![](http://ojr0cmiri.bkt.clouddn.com/a-complete-guide-to-flexbox/align-content.svg)
 
 `align-content`是当父元素所包含的行在交叉轴方向有空余部分时如何分配空间。与`justify-content`在主轴上如何对单个子元素对齐很相似。
 
@@ -169,7 +173,7 @@ flex-flow: <‘flex-direction’> || <‘flex-wrap’>
 
 ##### order
 
-![](./images/order-2.svg)
+![](http://ojr0cmiri.bkt.clouddn.com/a-complete-guide-to-flexbox/order-2.svg)
 
 默认情况下，子元素按照代码书写的先后顺序布局，但`order`属性可以更改子元素出现的顺序。
 
@@ -182,7 +186,7 @@ flex-flow: <‘flex-direction’> || <‘flex-wrap’>
 
 ##### flex-grow
 
-![](./images/flex-grow.svg)
+![](http://ojr0cmiri.bkt.clouddn.com/a-complete-guide-to-flexbox/flex-grow.svg)
 
 `flex-grow`规定在空间允许的情况下，子元素如何按照比例分配可用剩余空间。如果所有的子元素的属性都设定为`1`,则父元素中的剩余空间会等分给所有子元素。如果其中某个子元素的`flex-grow`设定为2，则在分配剩余空间时该子元素将获得其他元素二倍的空间（至少会尽力获得）。
 
@@ -217,7 +221,7 @@ flex-flow: <‘flex-direction’> || <‘flex-wrap’>
 ```
 如果设置为0, 则子元素内容周围的空隙不会根据`flex-grow`按比例分配，如果设置为`auto`，则子元素周围额外的空袭会根据`flex-grow`按照比例分配，如下图：
 
-![](./images/rel-vs-abs-flex.svg)
+![](http://ojr0cmiri.bkt.clouddn.com/a-complete-guide-to-flexbox/rel-vs-abs-flex.svg)
 
 ##### flex
 
@@ -233,7 +237,7 @@ flex-flow: <‘flex-direction’> || <‘flex-wrap’>
 
 ##### align-self
 
-![](./images/align-self.svg)
+![](http://ojr0cmiri.bkt.clouddn.com/a-complete-guide-to-flexbox/align-self.svg)
 
 通过设置某个子元素的`align-self`属性，可以覆盖`align-items`所设置的对齐方式。属性值与`align-items`中的意义相同，不再赘述。
 
@@ -428,7 +432,7 @@ Flex布局需要一些浏览器前缀来最大力度地兼容大多数的浏览�
 * (tweener)是指2011年以后非官方的临时版本(e.g. `display:flexbox;`)。
 * (old)是指2009年以后的旧语法(e.g. `display:box;`)
 
-![](./images/browser-support.png)
+![](http://ojr0cmiri.bkt.clouddn.com/a-complete-guide-to-flexbox/browser-support.png)
 
 Blackberry browser 10+ 支持新语法。
 
