@@ -65,6 +65,12 @@ duoshuo_shortname: leebeibei
 # Disqus
 disqus_shortname: 
 
+# reward
+reward:
+  enable: true
+  qrCode: 
+    wechat: /image/reward/wechat.jpg
+    alipay: /image/reward/alipay.jgp
 
 # ===========================================
 # Version
