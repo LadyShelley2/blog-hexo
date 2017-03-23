@@ -10,7 +10,9 @@ tags:
 > 原文：[A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
  作者：[CHRIS COYIER](https://css-tricks.com/author/chriscoyier/)
  译者：Shelley Lee
- 未经同意不得转载。
+ 本文同时发布于[知乎专栏：前端指南](https://zhuanlan.zhihu.com/fe-guide)
+ 转载需提前联系译者，未经允许不得转载。
+ 
 
 ## 背景介绍
 
@@ -54,7 +56,7 @@ Flex布局是一个完整的模块而不是一个单独的属性，它包括了�
 
 ### 父元素属性
 
-##### display
+#### display
 
 用来定义父元素是一个 flex布局容器。如果设置为`flex`则父元素为块状元素，设置为`inline-flex`父元素呈现为行内元素。
 
@@ -64,7 +66,7 @@ Flex布局是一个完整的模块而不是一个单独的属性，它包括了�
 }
 ```
 
-##### flex-direction
+#### flex-direction
 
 ![](http://ojr0cmiri.bkt.clouddn.com/a-complete-guide-to-flexbox/flex-direction2.svg)
 
@@ -81,7 +83,7 @@ Flex布局是一个完整的模块而不是一个单独的属性，它包括了�
 * `column`: 列方向，与`row`相似，只是从上到下。
 * `column-reverse`: 列反方向，与`row-reverse`相似，只是从下岛上。
 
-##### flex-wrap
+#### flex-wrap
 
 ![](http://ojr0cmiri.bkt.clouddn.com/a-complete-guide-to-flexbox/flex-wrap.svg)
 
@@ -98,7 +100,7 @@ Flex布局是一个完整的模块而不是一个单独的属性，它包括了�
 
 这里有一些可视化的[示例](https://css-tricks.com/almanac/properties/f/flex-wrap/)。
 
-##### flex-flow
+#### flex-flow
 
 `flex-flow`是`flex-direction`和`flex-wrap`属性的缩写形式。默认值是`row,nowrap`。
 
@@ -106,7 +108,7 @@ Flex布局是一个完整的模块而不是一个单独的属性，它包括了�
 flex-flow: <‘flex-direction’> || <‘flex-wrap’>
 ```
 
-##### justify-content
+#### justify-content
 
 ![](http://ojr0cmiri.bkt.clouddn.com/a-complete-guide-to-flexbox/justify-content.svg)
 
@@ -124,7 +126,7 @@ flex-flow: <‘flex-direction’> || <‘flex-wrap’>
 }
 ```
 
-##### align-items
+#### align-items
 
 ![](http://ojr0cmiri.bkt.clouddn.com/a-complete-guide-to-flexbox/align-items.svg)
 
@@ -141,7 +143,7 @@ flex-flow: <‘flex-direction’> || <‘flex-wrap’>
 * baseline: 按照项目的第一行文字的基线对齐。
 * stretch: 默认值，在满足子项目所设置的`min-height`、`max-height`、`height`的情况下拉伸子元素使之填充整个父元素。
 
-##### align-content
+#### align-content
 
 ![](http://ojr0cmiri.bkt.clouddn.com/a-complete-guide-to-flexbox/align-content.svg)
 
@@ -158,7 +160,7 @@ flex-flow: <‘flex-direction’> || <‘flex-wrap’>
 
 > **译者注**：注意`align-items`和`align-content`的区别，前者是指在单行内的子元素对齐方式，后者是指多行之间的对齐方式。
 
-##### 父元素属性总结
+#### 父元素属性总结
 
 ```css
   display: flex|inline-flex;
@@ -171,7 +173,7 @@ flex-flow: <‘flex-direction’> || <‘flex-wrap’>
 ```
 ### 子元素属性
 
-##### order
+#### order
 
 ![](http://ojr0cmiri.bkt.clouddn.com/a-complete-guide-to-flexbox/order-2.svg)
 
@@ -184,7 +186,7 @@ flex-flow: <‘flex-direction’> || <‘flex-wrap’>
 ```
 > **译者注**：`order`的默认值为0;子元素的`order`值越小，布局越排在前面，参考例图理解。
 
-##### flex-grow
+#### flex-grow
 
 ![](http://ojr0cmiri.bkt.clouddn.com/a-complete-guide-to-flexbox/flex-grow.svg)
 
@@ -198,7 +200,7 @@ flex-flow: <‘flex-direction’> || <‘flex-wrap’>
 **注**：`flex-grow`不接受负值。
 > **译者注**：默认值为0,意味着即使有剩余空间，各子元素也不会放大。
 
-##### flex-shrink
+#### flex-shrink
 
 与`flex-grow`属性类似，`flex-shrink`定义了空间不足时项目的缩小比例。
 
@@ -211,7 +213,7 @@ flex-flow: <‘flex-direction’> || <‘flex-wrap’>
 **注**： `flex-shrink`不接受负值。
 >**译者注**：`flex-shrink`默认值为1, 当所有子元素都为默认值时，则空间不足时子元素会同比例缩小。如果其中某个子元素的`flex-shrink`值为0，则空间不足时该子元素并不会缩小。如果其中某个子元素的`flex-shrink`值为2时，则空间不足时该子元素会以二倍速度缩小。
 
-##### flex-basis
+#### flex-basis
 `flex-basis`定义了在计算剩余空间之前子元素默认的大小。可以设置为某个长度（e.g. 20%, 5rem, etc.）或者关键字。关键字`auto`意味着子元素会按照其本来的大小显示。关键字`content`意味着根据内容来确定大小——这个关键字到目前没有被很好地支持，所以测试起来比较困难，与`content`的类似的关键字还有`max-content`, `min-content`, `fit-content`。
 
 ```css
@@ -223,7 +225,7 @@ flex-flow: <‘flex-direction’> || <‘flex-wrap’>
 
 ![](http://ojr0cmiri.bkt.clouddn.com/a-complete-guide-to-flexbox/rel-vs-abs-flex.svg)
 
-##### flex
+#### flex
 
 `flex`是`flex-grow`、`flex-shrink`、`flex-basis`三个属性的缩写。其中第二个和第三个参数(`flex-grow`,`flex-basis`)是可选的。默认值为`0 1 auto`。
 
@@ -235,7 +237,7 @@ flex-flow: <‘flex-direction’> || <‘flex-wrap’>
 
 推荐使用缩写形式而不是单独地设置每一个属性，缩写形式中会智能地计算出相关值。
 
-##### align-self
+#### align-self
 
 ![](http://ojr0cmiri.bkt.clouddn.com/a-complete-guide-to-flexbox/align-self.svg)
 
@@ -249,7 +251,9 @@ flex-flow: <‘flex-direction’> || <‘flex-wrap’>
 
 **注**：`float`,`clear`,和`vertical-align`对flex子元素没有任何影响。
 
-### 示例
+## 示例
+
+### 示例一：水平垂直居中
 
 我们从一个非常非常简单的例子开始，解决一个我们经常会遇到的问题：水平垂直居中。如果使用flex布局会非常简单。
 
@@ -266,6 +270,8 @@ flex-flow: <‘flex-direction’> || <‘flex-wrap’>
 }
 ```
 这个主要原因是，在flex布局的父元素中设置`margin`为`auto`会自动吸收额外的空间，所以设置水平垂直的`margin`都为`auto`会使子元素在水平垂直方向上都完美居中。
+
+### 示例二：响应式初体验
 
 现在我们考虑用更多的属性。考虑有6个子元素，有固定的大小，但是我们希望他们能够在改变浏览器宽度的时候仍然可以在水平轴上完美地显示（注意在不使用媒体查询的前提下）。
 
@@ -286,9 +292,13 @@ flex-flow: <‘flex-direction’> || <‘flex-wrap’>
 }
 ```
 
+完成。剩下的就是一些其他样式如颜色的设置了。
 
-完成。剩下的就是一些其他样式如颜色的设置了。[在线示例](https://codepen.io/css-tricks/embed/EKEYob?height=409&theme-id=1&slug-hash=EKEYob&default-tab=result&user=css-tricks#0)是在CodePen上的一个案例，尝试改变你的浏览器窗口观察会发生什么。
+<iframe src="https://codepen.io/css-tricks/embed/EKEYob?height=409&theme-id=1&slug-hash=EKEYob&default-tab=result&user=css-tricks#0" style="height:300px;width:100%;overflow:hidden" seamless></iframe>
 
+改变浏览器大小，看看布局会有什么变化吧！
+
+### 示例三：响应式导航栏
 让我们再尝试一些别的东西。假设我们有一个向右对齐的导航栏在我们网页的最上端，但是我们希望它在中屏上显示时为居中，在小屏上显示为单列。同样使用flex布局，实现起来会很简单。
 
 ```css
@@ -316,8 +326,11 @@ flex-flow: <‘flex-direction’> || <‘flex-wrap’>
   }
 }
 ```
+<iframe src="https://codepen.io/css-tricks/embed/YqaKYR?height=283&theme-id=1&slug-hash=YqaKYR&default-tab=result&user=css-tricks#0" style="height:300px;width:100%;overflow:hidden" seamless></iframe>
 
-[在线示例](https://codepen.io/css-tricks/embed/YqaKYR?height=283&theme-id=1&slug-hash=YqaKYR&default-tab=result&user=css-tricks#0)，尝试改变浏览器宽度，观察导航栏的变化。
+改变浏览器大小，看看布局会有什么变化吧！
+
+### 示例四：移动优先的三栏布局
 
 我们通过灵活使用flex布局尝试一些更好玩的布局。来做一个移动优先的3列布局并带有全屏宽的header和footer。
 
@@ -360,9 +373,12 @@ flex-flow: <‘flex-direction’> || <‘flex-wrap’>
   .footer  { order: 4; }
 }
 ```
-[在线示例](https://codepen.io/css-tricks/embed/jqzNZq?height=359&theme-id=1&slug-hash=jqzNZq&default-tab=result&user=css-tricks#0)
 
-### 浏览器前缀
+<iframe src="https://codepen.io/css-tricks/embed/jqzNZq?height=359&theme-id=1&slug-hash=jqzNZq&default-tab=result&user=css-tricks#0" style="height:300px;width:100%;overflow:hidden" seamless></iframe>
+
+改变浏览器大小，看看布局会有什么变化吧！
+
+## 浏览器前缀
 
 Flex布局需要一些浏览器前缀来最大力度地兼容大多数的浏览器。Flex布局的前缀不只是在属性前面添加浏览器前缀，不同浏览器下的属性名和属性值都不同，这是因为Flexbox布局的标准一直在变，一共有old, tweener, new 三个版本。
 
@@ -405,12 +421,7 @@ Flex布局需要一些浏览器前缀来最大力度地兼容大多数的浏览�
 }
 ```
 
-### 相关属性
-
-* [A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
-* 一些Grid属性，例如[grid-row/grid-column](https://css-tricks.com/almanac/properties/g/grid-row-column/)
-
-### 其他资源
+## 其他资源
 
 * [Flexbox in the CSS specifications](http://www.w3.org/TR/css3-flexbox/)
 * [Flexbox at MDN](https://developer.mozilla.org/en-US/docs/CSS/Tutorials/Using_CSS_flexible_boxes)
@@ -420,11 +431,11 @@ Flex布局需要一些浏览器前缀来最大力度地兼容大多数的浏览�
 * [Flexbox by Raphael Goetter (FR)](http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html)
 * [Flexplorer by Bennett Feely](http://bennettfeely.com/flexplorer/)
 
-### Bugs
+## Bugs
 
-我见过的flexbox收集是Philip Walton 和 Greg Whitworth的[Flexbugs](https://github.com/philipwalton/flexbugs),是开源的，你可以在上面跟踪动态。
+我见过的最棒的flexbox bug总结是Philip Walton 和 Greg Whitworth的[Flexbugs](https://github.com/philipwalton/flexbugs),是开源的，你可以在上面跟踪动态。
 
-### 浏览器支持
+## 浏览器支持
 
 首先看一下Flex布局的三个版本
 
@@ -442,3 +453,4 @@ Blackberry browser 10+ 支持新语法。
 
 ## 译者的话
 网上有不少flex相关教程，但当我看到[CHRIS COYIER](https://css-tricks.com/author/chriscoyier/)的这篇文章时，不禁被其详尽所震撼，最近也在撰写布局相关的文章，故产生了翻译此文的想法。翻译过程中尽量保持原文原貌，部分地方做了小幅调整以便更加符合中文思维。文中图片均来源于原文。水平有限，如有误漏之处，还请读者不吝赐教。最后希望此文能给读者带去帮助。
+
