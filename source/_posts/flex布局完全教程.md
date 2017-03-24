@@ -16,17 +16,17 @@ tags:
 
 ## 背景介绍
 
-Flexbox 布局（也叫弹性盒子布局，目前在W3C最后一轮工作草案中）模块目标在于提供一个更有效地布局、对齐方式，并且能够使父元素在子元素的大小未知或动态变化情况下仍然能够分配好子元素之间的间隙。
+Flexbox 布局（也叫Flex布局，弹性盒子布局）模块目标在于提供一个更有效地布局、对齐方式，并且能够使父元素在子元素的大小未知或动态变化情况下仍然能够分配好子元素之间的间隙。
 
 Flex布局的主要思想是使父元素能够调节子元素的高度、宽度和排布的顺序，从而能够最好地适应可用布局空间（能够适应不同的设备和不同大小的屏幕）。设定为flex布局的父元素（容器）能够放大子元素使之尽可能填充可用空间，也可以收缩子元素使之不溢出。
 
 最重要的是，与传统布局中块状元素按照垂直方向摆放，行内元素按照水平方向摆放相比，flex布局是无方向的。传统布局在应对大型复杂的布局时缺乏灵活性，特别是在改变方向、改变大小、伸展、收缩等等方面。
 
-Note: Flex 布局比较适合小规模的布局，Gird布局面向更大规模的布局。
+**注**: Flex 布局比较适合小规模的布局，Gird布局面向更大规模的布局。
 
 ## 基本概念
 
-Flex布局是一个完整的模块而不是一个单独的属性，它包括了完整的一套属性。其中有的属性是设置在容器（container，也可以叫做父元素，称为`flex container`）上，有的则是设置在容器的子元素上（flex items）上。
+Flex布局是一个完整的模块而不是一个单独的属性，它包括了完整的一套属性。其中有的属性是设置在容器（container，也可以叫做父元素，称为`flex container`）上，有的则是设置在容器的项目上（item，也可以叫做子元素，称为`flex items`）上。
 
 <!--more--> 
 
@@ -78,7 +78,7 @@ Flex布局是一个完整的模块而不是一个单独的属性，它包括了�
 }
 ```
 
-* `row`: 行方向，`flex-direction`的默认值，在`ltr`(left to right, 从左到右)排版方式下从左到右排列，在`rtl`(right to left, 从右到左)排版方式下从右到左排列。
+* `row`: 行方向，`flex-direction`的默认值，在`ltr`(left to right， 从左到右)排版方式下从左到右排列，在`rtl`(right to left， 从右到左)排版方式下从右到左排列。
 * `row-reverse`: 行反方向，在`ltr`中从右向左，在`rtl`中从左到右。
 * `column`: 列方向，与`row`相似，只是从上到下。
 * `column-reverse`: 列反方向，与`row-reverse`相似，只是从下岛上。
@@ -190,7 +190,7 @@ flex-flow: <‘flex-direction’> || <‘flex-wrap’>
 
 ![](http://ojr0cmiri.bkt.clouddn.com/a-complete-guide-to-flexbox/flex-grow.svg)
 
-`flex-grow`规定在空间允许的情况下，子元素如何按照比例分配可用剩余空间。如果所有的子元素的属性都设定为`1`,则父元素中的剩余空间会等分给所有子元素。如果其中某个子元素的`flex-grow`设定为2，则在分配剩余空间时该子元素将获得其他元素二倍的空间（至少会尽力获得）。
+`flex-grow`规定在空间允许的情况下，子元素如何按照比例分配可用剩余空间。如果所有的子元素的属性都设定为`1`，则父元素中的剩余空间会等分给所有子元素。如果其中某个子元素的`flex-grow`设定为2，则在分配剩余空间时该子元素将获得其他元素二倍的空间（至少会尽力获得）。
 
 ```css
 .item {
@@ -198,7 +198,7 @@ flex-flow: <‘flex-direction’> || <‘flex-wrap’>
 }
 ```
 **注**：`flex-grow`不接受负值。
-> **译者注**：默认值为0,意味着即使有剩余空间，各子元素也不会放大。
+> **译者注**：默认值为`0`，意味着即使有剩余空间，各子元素也不会放大。
 
 #### flex-shrink
 
@@ -211,7 +211,7 @@ flex-flow: <‘flex-direction’> || <‘flex-wrap’>
 ```
 
 **注**： `flex-shrink`不接受负值。
->**译者注**：`flex-shrink`默认值为1, 当所有子元素都为默认值时，则空间不足时子元素会同比例缩小。如果其中某个子元素的`flex-shrink`值为0，则空间不足时该子元素并不会缩小。如果其中某个子元素的`flex-shrink`值为2时，则空间不足时该子元素会以二倍速度缩小。
+>**译者注**：`flex-shrink`默认值为`1`， 当所有子元素都为默认值时，则空间不足时子元素会同比例缩小。如果其中某个子元素的`flex-shrink`值为0，则空间不足时该子元素并不会缩小。如果其中某个子元素的`flex-shrink`值为2时，则空间不足时该子元素会以二倍速度缩小。
 
 #### flex-basis
 `flex-basis`定义了在计算剩余空间之前子元素默认的大小。可以设置为某个长度（e.g. 20%, 5rem, etc.）或者关键字。关键字`auto`意味着子元素会按照其本来的大小显示。关键字`content`意味着根据内容来确定大小——这个关键字到目前没有被很好地支持，所以测试起来比较困难，与`content`的类似的关键字还有`max-content`, `min-content`, `fit-content`。
@@ -249,7 +249,7 @@ flex-flow: <‘flex-direction’> || <‘flex-wrap’>
 }
 ```
 
-**注**：`float`,`clear`,和`vertical-align`对flex子元素没有任何影响。
+**注**：`float`,`clear`和`vertical-align`对flex子元素没有任何影响。
 
 ## 示例
 
@@ -260,13 +260,13 @@ flex-flow: <‘flex-direction’> || <‘flex-wrap’>
 ```css
 .parent {
   display: flex;
-  height: 300px; /* Or whatever */
+  height: 300px; /* 随意设定大小 */
 }
 
 .child {
-  width: 100px;  /* Or whatever */
-  height: 100px; /* Or whatever */
-  margin: auto;  /* Magic! */
+  width: 100px;  /* 随意设定大小，比父元素要小 */
+  height: 100px; /* 同上 */
+  margin: auto;  /* 见证奇迹的时刻 */
 }
 ```
 这个主要原因是，在flex布局的父元素中设置`margin`为`auto`会自动吸收额外的空间，所以设置水平垂直的`margin`都为`auto`会使子元素在水平垂直方向上都完美居中。
@@ -433,7 +433,7 @@ Flex布局需要一些浏览器前缀来最大力度地兼容大多数的浏览�
 
 ## Bugs
 
-我见过的最棒的flexbox bug总结是Philip Walton 和 Greg Whitworth的[Flexbugs](https://github.com/philipwalton/flexbugs),是开源的，你可以在上面跟踪动态。
+我见过的最棒的flexbox bug总结是Philip Walton 和 Greg Whitworth的[Flexbugs](https://github.com/philipwalton/flexbugs)，是开源的，你可以在上面跟踪动态。
 
 ## 浏览器支持
 
