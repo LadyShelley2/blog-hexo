@@ -1,10 +1,10 @@
 ---
-title: 递归算法三种写法(Javascript)
-date: 2017-05-11 11:32:12
+title: JavaScript递归算法的四种写法
+date: 2017-05-11 14:01:43
 tags:
--JavaScript
--前端开发
--算法
+- JavaScript
+- 前端开发
+- 算法
 ---
 
 >  转载需提前联系译者，未经允许不得转载。
@@ -15,21 +15,9 @@ tags:
 
 <!--more--> 
 
-#题目说明
+# 题目说明
 
-以递归经典题目fabonacci数列为例，公式如下：
-
-$$
-F_n=\left\{
-    \begin{Array}{ll}
-        0 & \textrm{if}n=0;\\
-        1 & \textrm{if}n=1;
-        F_{n-1}+F_{n-2} & \textrm{if} n\lt2.
-    \end{Array}
-    \right.
-$$
-
-通俗来讲就是第一项为0，第二项为1，之后的每项等于前两项之和，因此数列为
+以递归经典题目fabonacci数列为例，fabonacci数列第一项为0，第二项为1，之后的每项等于前两项之和，因此数列的前几个元素为
 
 $$
 0,1,1,2,3,5,8,13,\ldots
